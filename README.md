@@ -8,3 +8,5 @@ The purpose of this project was not to come up with a Sudoku Solver which would 
 I hope you will enjoy and benefit from it in some way as I did writing the code.
 
 Gonzalo Isaza
+Github alias: 		 giposse
+StackOverflow alias: DDRider62
