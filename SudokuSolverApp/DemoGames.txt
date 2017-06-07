@@ -1,0 +1,20 @@
+﻿Beginner 1
+xxx xx5 41x // 5xx x94 xx3 // 743 xx6 xx9
+x3x xx8 5xx // x56 x7x 18x // xx4 1xx x3x
+9xx 8xx 241 // 3xx 46x xx5 // x17 5xx xxx
+
+Easy 1 
+xx8 xx7 x4x // x7x xx9 x15 // 4x3 x21 xxx
+8xx 6xx 79x // 3xx x8x xx1 // x65 xx4 xx8
+xxx 15x 4x9 // 14x 2xx x5x // x8x 4xx 1xx
+
+Intermediate 1
+xx6 8xx 3xx // xx8 x76 xxx // xxx 3xx x68
+7xx xx2 x95 // xxx x9x xxx // 92x 5xx xx3
+14x xx8 xxx // xxx 23x 9xx // xx3 xx5 7xx
+
+Awful 1
+xx2 1xx xxx // 4xx 6xx x8x // xx9 xx3 x7x
+xx4 xx1 9xx // xx8 9xx x65 // x2x 4xx xxx
+8xx 2xx xx9 // xx5 x6x xxx // xx1 3xx 85x
+

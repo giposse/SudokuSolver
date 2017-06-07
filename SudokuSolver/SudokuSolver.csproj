@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CBF36A66-5412-4921-9924-A929BBF32F1D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SudokuSolver</RootNamespace>
+    <AssemblyName>SudokuSolver</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.6.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>packages\NUnit.3.6.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Coord.cs" />
+    <Compile Include="Exceptions\InvalidBoardSizeException.cs" />
+    <Compile Include="Exceptions\UnexpectedStateException.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="GameParts\AlmostLockedSet.cs" />
+    <Compile Include="GameParts\AlmostLockedSetEqualityComparer.cs" />
+    <Compile Include="GameParts\General\Logger.cs" />
+    <Compile Include="GameParts\PMColor.cs" />
+    <Compile Include="RuleData\CellRole.cs" />
+    <Compile Include="RuleData\PMRole.cs" />
+    <Compile Include="RuleData\RuleFinding.cs" />
+    <Compile Include="RuleData\PMFinding.cs" />
+    <Compile Include="RuleData\SolveInfo.cs" />
+    <Compile Include="Rules\ALSxzRule.cs" />
+    <Compile Include="GameParts\CellMask.cs" />
+    <Compile Include="GameParts\PencilMarkInfo.cs" />
+    <Compile Include="GameParts\General\CellSorter.cs" />
+    <Compile Include="GameParts\Cell.cs" />
+    <Compile Include="GameParts\GameBoard.cs" />
+    <Compile Include="Exceptions\InvalidMoveException.cs" />
+    <Compile Include="GameSolver.cs" />
+    <Compile Include="Interfaces\ISolutionStep.cs" />
+    <Compile Include="Rules\FishPatternsAll.cs" />
+    <Compile Include="Rules\HiddenValuesRule.cs" />
+    <Compile Include="Rules\HiddenNakedRuleBase.cs" />
+    <Compile Include="Rules\LockedInLinesOrGroups.cs" />
+    <Compile Include="Rules\NakedValuesRule.cs" />
+    <Compile Include="Rules\NakedHiddenFinder.cs" />
+    <Compile Include="Rules\RemotePair.cs" />
+    <Compile Include="Rules\SimpleAndMedusaColoring.cs" />
+    <Compile Include="Rules\SolutionStepBase.cs" />
+    <Compile Include="Rules\SinglePossibleValue.cs" />
+    <Compile Include="Rules\UniqueRectangle.cs" />
+    <Compile Include="Rules\XYChainRule.cs" />
+    <Compile Include="Rules\XYZWingRule.cs" />
+    <Compile Include="Rules\XYWing.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="GameParts\ALSMatch.cs" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
